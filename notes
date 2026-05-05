@@ -1,0 +1,33 @@
+=== EMBED AS WIDGET ON ANY WEBSITE ===
+
+Option 1 — Simple iframe embed (full agent with sidebar):
+<iframe
+  src="https://YOUR-DEPLOYED-URL.com/agent"
+  width="100%"
+  height="700"
+  style="border:none; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.15);">
+</iframe>
+
+Option 2 — Compact widget mode (no sidebar/topbar, clean chat only):
+<iframe
+  src="https://YOUR-DEPLOYED-URL.com/agent?widget=1"
+  width="420"
+  height="620"
+  style="border:none; border-radius:20px; box-shadow:0 8px 40px rgba(0,0,0,0.2); position:fixed; bottom:24px; right:24px;">
+</iframe>
+
+Option 3 — Floating chat bubble widget:
+<div id="qm-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;">
+  <div id="qm-frame" style="display:none;width:420px;height:620px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.25);margin-bottom:12px;">
+    <iframe src="https://YOUR-DEPLOYED-URL.com/agent?widget=1" width="100%" height="100%" style="border:none;"></iframe>
+  </div>
+  <button onclick="var f=document.getElementById('qm-frame');f.style.display=f.style.display==='none'?'block':'none'"
+    style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#00e5ff,#7c3aed);border:none;cursor:pointer;font-size:24px;color:#fff;box-shadow:0 4px 20px rgba(0,229,255,0.4);">
+    🧠
+  </button>
+</div>
+
+=== URL PARAMS ===
+?widget=1        → Hides sidebar and topbar, clean chat only (best for embedding)
+?theme=light     → Force light theme
+?theme=dark      → Force dark theme (default)
