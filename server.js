@@ -10,6 +10,8 @@ app.use(express.json());
 const dns = require("dns");
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
+// mongodb+srv://Ritesh_Ecom:Ritesh5484@riteshcluster.kqabiaz.mongodb.net/player_app?appName=Riteshcluster
+
 // ── Serve frontend ────────────────────────────────────────────
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/agent', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
